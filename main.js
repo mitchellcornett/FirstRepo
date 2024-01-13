@@ -24,5 +24,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         li.innerHTML = wordArray[i];
     }
     }
+
+    let button = document.getElementById("transformButton");
+
+    button.classList.remove("hidden");
     
 });
