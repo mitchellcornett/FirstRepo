@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             i--;
         } else { 
         wordArray.push(wordEntered);
+        }
     }
 
     for (let i = 0; i < numberOfWords; i++) {
