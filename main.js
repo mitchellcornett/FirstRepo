@@ -5,7 +5,6 @@ let wordArray = [];
 
 let currentSection = 'firstSection';
 
-
 document.addEventListener("DOMContentLoaded", function (event) {
 
     for (let i = 0; i < numberOfWords; i++) {
@@ -22,14 +21,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
     for (let i = 0; i < numberOfWords; i++) {
 
         let li = document.getElementById("li" + i)
-        if (li){
+        
         li.innerHTML = wordArray[i];
-    }
+
     }
 
-const firstSection = document.getElementById("firstSection");
-const secondSection = document.getElementById("secondSection");
-const transformButton = document.getElementById("transformButton"); 
+    const firstSection = document.getElementById("firstSection");
+    const secondSection = document.getElementById("secondSection");
+    const transformButton = document.getElementById("transformButton"); 
+
     transformButton.addEventListener("click", function () {
       if (currentSection === "firstSection") {
         firstSection.classList.add("hidden");
@@ -40,5 +40,20 @@ const transformButton = document.getElementById("transformButton");
         secondSection.classList.add("hidden");
         currentSection = "firstSection";
       }
+
+      function letterSwitcher (word) {
+        return(word.charAt(word.length - 1) + word.substring(1, word.length - 1) + word.charAt(0));
+      }
+
+      let switchedArray = wordArray.map(letterSwitcher);
+
+      for (let i = 0; i < numberOfWords; i++) {
+
+        let li = document.getElementById("li" + (i + 3))
+        
+        li.innerHTML = switchedArray[i];
+
+    }
+
     });
 });
