@@ -3,6 +3,8 @@ let numberOfWords = 3;
 
 let wordArray = [];
 
+let currentSection = 'firstSection';
+
 
 document.addEventListener("DOMContentLoaded", function (event) {
 
@@ -25,8 +27,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     }
 
-    let button = document.getElementById("transformButton");
-
-    button.classList.remove("hidden");
-    
+const firstSection = document.getElementById("firstSection");
+const secondSection = document.getElementById("secondSection");
+const transformButton = document.getElementById("transformButton"); 
+    transformButton.addEventListener("click", function () {
+      if (currentSection === "firstSection") {
+        firstSection.classList.add("hidden");
+        secondSection.classList.remove("hidden");
+        currentSection = "secondSection";
+      } else {
+        firstSection.classList.remove("hidden");
+        secondSection.classList.add("hidden");
+        currentSection = "firstSection";
+      }
+    });
 });
