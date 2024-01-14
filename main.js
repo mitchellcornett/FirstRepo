@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const secondSection = document.getElementById("secondSection");
     const transformButton = document.getElementById("transformButton"); 
 
+    transformButton.classList.remove("hidden");
+
     transformButton.addEventListener("click", function () {
       if (currentSection === "firstSection") {
         firstSection.classList.add("hidden");
